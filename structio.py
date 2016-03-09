@@ -61,7 +61,10 @@ class StructIO(BytesIO):
     def read_ctype(self, ctype):
         """Reads and returns the given `ctype` from the stream"""
         ctype = CType(ctype)
-        buf = self.read(ctype.value[1])
+        exlen = ctype.value[1]
+        buf = self.read(exlen)
+        if len(buf) != exlen:
+            raise EOFError("Expected %d bytes, got %d" % (exlen, len(buf)))
         v, = struct.unpack(self._endian.value + ctype.value[0], buf)
         return v
 
