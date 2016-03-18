@@ -19,8 +19,11 @@ setup(
     author_email='ruibalp@gmail.com',
     license='MIT',
     keywords='stream struct BytesIO StringIO',
-    url='http://github.com/fmoo/python-structio',
-    download_url='https://github.com/fmoo/python-structio/%s.tar.gz' % VERSION,
+    url='http://github.com/fmoo/python-%s' % (NAME),
+    download_url='https://github.com/fmoo/python-%s/%s.tar.gz' % (
+        NAME,
+        VERSION,
+    ),
 
     install_requires=install_requires,
     #test_suite="tests",
