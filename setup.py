@@ -2,7 +2,7 @@ from setuptools import setup
 import sys
 
 NAME = 'structio'
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 
 install_requires = []
 
