@@ -74,7 +74,7 @@ class StructIO(BytesIO):
 
     def peek_ctype(self, ctype):
         """Reads and returns the given `ctype` from the stream
-        
+
         Does not update the internal read pointer."""
         ctype = CType(ctype)
         v = self.read_ctype(ctype)
@@ -82,7 +82,7 @@ class StructIO(BytesIO):
         return v
 
     def write_ctype(self, ctype, value):
-        """Reads `value` as the specified the `ctype` into the stream""" 
+        """Reads `value` as the specified the `ctype` into the stream"""
         ctype = CType(ctype)
         buf = struct.pack(self._endian.value + ctype.value[0], value)
         return self.write(buf)
