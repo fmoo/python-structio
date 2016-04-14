@@ -40,6 +40,9 @@ class StructIO(BytesIO):
         """Rewind the stream by `nbytes`"""
         self.seek(-nbytes, 1)
 
+    def forward(self, nbytes):
+        self.seek(nbytes, 1)
+
     def peek(self, nbytes=1):
         """Peek ahead into the stream, returning `nbytes` (default 1)"""
         v = self.read(nbytes)
