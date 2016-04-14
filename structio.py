@@ -50,7 +50,6 @@ class StructIO(BytesIO):
         return v
 
     def eof(self):
-        print repr(self.peek(1))
         return self.peek(1) == ''
 
     def copy(self, nbytes, offs=0, rel=1):
